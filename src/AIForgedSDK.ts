@@ -7,7 +7,6 @@
 //----------------------
 // ReSharper disable InconsistentNaming
 
-import * as xxx from 'node-fetch';
 import {AIForgedConfig} from "./AIForgedConfig.js";
 import {AIForgedBase} from "./AIForgedBase.js";
 
