@@ -1,9 +1,9 @@
-import { AIForgedConfig, AIForgedHttp } from "./AIForgedConfig.js";
-import { SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, SortField, SortDirection } from "./AIForgedSDK.js";
+import { AIForgedConfig, AIForgedHttp } from "./AIForgedConfig";
+import { SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, SortField, SortDirection } from "./AIForgedSDK";
 console.log("Start");
-var serverUrl = "https://local.aiforged.com";
-//var apikey:string = "<get this from aiforged front end>";
-var apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjdlNmJmMDk0LWM0OWEtNGVhZC1iZjAyLTFjYTg0YjA0NzFkMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJkZW1vIiwibmJmIjoxNjM3Nzg3NDU1LCJleHAiOjE2NjkzMjM0NTUsImlzcyI6ImFpZm9yZ2VkIGFwaWtleSIsImF1ZCI6ImFpZm9yZ2VkIn0.a3Mg04u9AQO7xgIkFUgHkwwY0akE4bSKqq-KrtCEJpI";
+var serverUrl = "https://portal.aiforged.com";
+//get this API Key from aiforged front end at User Profile \ Sign-in Options \ API Keys
+var apikey = "";
 var http = new AIForgedHttp();
 var config = new AIForgedConfig(serverUrl);
 config.setAuthToken(apikey);
@@ -30,11 +30,16 @@ const projectpromises = projects.map(async (project) => {
         var docs = await docclnt.getExtended(user.id, project.id, service.id, UsageType.Inbox, null, null, null, null, null, null, null, null, null, 5, //pageSize
         SortField.Date, SortDirection.Descending, null, null, null, null, null, null, null);
         const docspromises = docs.map(async (doc) => {
-            console.log(`      Document ${doc.id} ${doc.filename} uploaded on ${doc.dtc}`);
-            var extract = await parclnt.extract(doc.id, null);
-            extract?.forEach(e => {
-                console.log(`         Field: ${e.name} Value: ${e.value}`);
-            });
+            try {
+                console.log(`      Document ${doc.id} ${doc.filename} uploaded on ${doc.dtc}`);
+                var extract = await parclnt.extract(doc.id, null);
+                extract?.forEach(e => {
+                    console.log(`         Field: ${e.name} Value: ${e.value}`);
+                });
+            }
+            catch (ex) {
+                console.log(ex, `         Error Getting Document ${doc.id} ${doc.filename}`);
+            }
         });
         await Promise.all(docspromises);
     });

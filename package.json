@@ -5,15 +5,16 @@
   "description": "AIForged SDK for Typescript",
   "version": "1.0.0",
   "scripts": {
-    "start": "tsc && node ./dist/index.js"
+    "start": "npx tsc --traceResolution && node --experimental-specifier-resolution=node ./dist/index.js"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^4.5.2"
+    "typescript": "^4.6.4"
   },
   "dependencies": {
     "linq": "^4.0.0",
-    "node-fetch": "^3.1.0"
+    "node-fetch": "^3.2.4",
+    "tsc": "^2.0.4"
   }
 }

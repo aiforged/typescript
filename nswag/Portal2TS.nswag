@@ -1,13 +1,13 @@
 ﻿//run with
-//cd C:\Git\LarcAI\AIForged\AIForged.Web
+//cd nswag
 //nswag run Portal2TS.nswag
 {
-  "runtime": "Net50",
+  "runtime": "Net60",
   "defaultVariables": null,
   "documentGenerator": {
 
     "fromDocument": {
-      "url": "https://dev.aiforged.com/openapi/v1.0/openapi.json"
+      "url": "https://portal.aiforged.com/openapi/v2.0/openapi.json"
     },
   },
   "codeGenerators": {    
@@ -73,6 +73,5 @@
       "output": "../src/AIForgedSDK.ts",
       "newLineBehavior": "Auto"
     }
-
   }
 }

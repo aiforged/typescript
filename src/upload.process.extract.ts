@@ -1,16 +1,16 @@
 
-import {AIForgedConfig, AIForgedHttp} from "./AIForgedConfig.js";
-import {SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, SortField, SortDirection, DocumentStatus} from "./AIForgedSDK.js";
+import {AIForgedConfig, AIForgedHttp} from "./AIForgedConfig";
+import {SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, SortField, SortDirection, DocumentStatus} from "./AIForgedSDK";
 import Enumerable from 'linq'
 
 console.log("Start")
 
-var projectId:number = 80;
-var serviceId:number = 42784;
-var apikey:string = "<get this from aiforged front end>";
+var serverUrl:string = "https://portal.aiforged.com";
+//get this API Key from aiforged front end at User Profile \ Sign-in Options \ API Keys
+var apikey:string = "";
 
 var http: AIForgedHttp = new AIForgedHttp();
-var config: AIForgedConfig = new AIForgedConfig("https://dev.aiforged.com");
+var config: AIForgedConfig = new AIForgedConfig(serverUrl);
 config.setAuthToken(apikey);
 
 var sysclnt: SystemClient = new SystemClient(config, undefined, http );
@@ -19,6 +19,9 @@ var prjclnt: ProjectClient = new ProjectClient(config, undefined, http);
 var svcclnt: ServicesClient = new ServicesClient(config, undefined, http);
 var parclnt: ParametersClient = new ParametersClient(config, undefined, http);
 var docclnt: DocumentClient = new DocumentClient(config, undefined, http);
+
+var projectId:number = 80;
+var serviceId:number = 42784;
 
 var user = await accclnt.getCurrentUser(null);
 
@@ -47,13 +50,19 @@ var filedata: any[] = [
     {"filename2": "data" },
 ];
 
-var uploadeddocs = await docclnt.upload(service.id, 
+var uploadeddocs = await docclnt.upload(service.id,
     user.id,
     project.id,
     null,
     DocumentStatus.Received,
     UsageType.Inbox,
     null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    undefined,
     null,
     filedata);
 
@@ -70,6 +79,7 @@ var processedresults = await svcclnt.process(user.id, project.id, service.id, up
     false,
     false,
     null,
+    false,
     null);
 
 processedresults.forEach(r => 

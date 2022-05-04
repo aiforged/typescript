@@ -1,11 +1,13 @@
 
-import {AIForgedConfig, AIForgedHttp} from "./AIForgedConfig.js";
-import {SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, SortField, SortDirection, DocumentStatus} from "./AIForgedSDK.js";
+import {AIForgedConfig, AIForgedHttp} from "./AIForgedConfig";
+import {SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, SortField, SortDirection, DocumentStatus} from "./AIForgedSDK";
+import Enumerable from 'linq'
 
 console.log("Start")
 
-var serverUrl:string = "https://dev.aiforged.com";
-var apikey:string = "<get this from aiforged front end>";
+var serverUrl:string = "https://portal.aiforged.com";
+//get this API Key from aiforged front end at User Profile \ Sign-in Options \ API Keys
+var apikey:string = "";
 
 var http: AIForgedHttp = new AIForgedHttp();
 var config: AIForgedConfig = new AIForgedConfig(serverUrl);
@@ -67,23 +69,23 @@ const projectpromises = projects.map(async (project) => {
 
         const docspromises = docs.map(async (doc) => {
         
+            try {
             console.log(`      Document ${doc.id} ${doc.filename} uploaded on ${doc.dtc}`);
 
             var extract = await parclnt.extract(doc.id, null);
             extract?.forEach(e => 
             {
                 console.log(`         Field: ${e.name} Value: ${e.value}`);    
-            });            
+            });  
+            } catch (ex:any) {
+                console.log(ex, `         Error Getting Document ${doc.id} ${doc.filename}`);
+            }
         });
-        await Promise.all(docspromises);  
-        
+        await Promise.all(docspromises);          
     });
-
-    await Promise.all(servicespromises);  
-    
+    await Promise.all(servicespromises);      
   });
 
-await Promise.all(projectpromises);  
-
+await Promise.all(projectpromises);
 
 console.log("Done")

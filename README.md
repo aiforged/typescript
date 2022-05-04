@@ -11,11 +11,13 @@ To run the code
 2) change your project id and service id
 3) run with `npm start`
 
+see [Stackoverflow: Cannot find module](https://stackoverflow.com/questions/65384754/error-err-module-not-found-cannot-find-module) for information regarding ERR_MODULE_NOT_FOUND
+
 compile with
-tsc --traceResolution
+npx tsc --traceResolution
 
 run with:
-node ./dist/index.js
+node --experimental-specifier-resolution=node --trace-warnings ./dist/index.js
 
 or combined with
 npm start
