@@ -3,7 +3,7 @@ import { SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesCli
 console.log("Start");
 var serverUrl = "https://portal.aiforged.com";
 //get this API Key from aiforged front end at User Profile \ Sign-in Options \ API Keys
-var apikey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6ImQ2NzkyOWU4LTI5YjAtNGE3ZS1hY2IwLWM4NWE2MGE2NjJjYSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWUiOiJ2b2RhY29tIiwibmJmIjoxNjUxNzUwOTIyLCJleHAiOjE2ODMyODY5MjIsImlzcyI6ImFpZm9yZ2VkIGFwaWtleSIsImF1ZCI6ImFpZm9yZ2VkIn0.JGbUlnuPfEdUGodv-AzwhcptgHXfxYE0XE3OUGWQziM";
+var apikey = "";
 var http = new AIForgedHttp();
 var config = new AIForgedConfig(serverUrl);
 config.setAuthToken(apikey);

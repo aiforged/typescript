@@ -8,9 +8,11 @@
 // ReSharper disable InconsistentNaming
 import { AIForgedBase } from "./AIForgedBase";
 export class AccountClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -1477,9 +1479,11 @@ export class AccountClient extends AIForgedBase {
     }
 }
 export class AuditClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -1599,9 +1603,11 @@ export class AuditClient extends AIForgedBase {
     }
 }
 export class BundlesClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -1793,9 +1799,11 @@ export class BundlesClient extends AIForgedBase {
     }
 }
 export class ClassesClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -2166,9 +2174,11 @@ export class ClassesClient extends AIForgedBase {
     }
 }
 export class ContactClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -2363,9 +2373,11 @@ export class ContactClient extends AIForgedBase {
     }
 }
 export class DataSetClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -3317,9 +3329,11 @@ export class DataSetClient extends AIForgedBase {
     }
 }
 export class DocumentClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -5675,9 +5689,11 @@ export class DocumentClient extends AIForgedBase {
     }
 }
 export class LogClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -5805,9 +5821,11 @@ export class LogClient extends AIForgedBase {
     }
 }
 export class MarketPlaceClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -6495,9 +6513,11 @@ export class MarketPlaceClient extends AIForgedBase {
     }
 }
 export class NotificationClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -7111,9 +7131,11 @@ export class NotificationClient extends AIForgedBase {
     }
 }
 export class ParamDefClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -7826,9 +7848,11 @@ export class ParamDefClient extends AIForgedBase {
     }
 }
 export class ParametersClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -8447,9 +8471,11 @@ export class ParametersClient extends AIForgedBase {
     }
 }
 export class PaymentClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -8761,9 +8787,11 @@ export class PaymentClient extends AIForgedBase {
     }
 }
 export class ProjectClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -9321,9 +9349,11 @@ export class ProjectClient extends AIForgedBase {
     }
 }
 export class ReportsClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -9597,9 +9627,11 @@ export class ReportsClient extends AIForgedBase {
     }
 }
 export class RolesClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -9993,9 +10025,11 @@ export class RolesClient extends AIForgedBase {
     }
 }
 export class ServicesClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -11724,9 +11758,11 @@ export class ServicesClient extends AIForgedBase {
     }
 }
 export class ServiceTypeClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -12157,9 +12193,11 @@ export class ServiceTypeClient extends AIForgedBase {
     }
 }
 export class SystemClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -12869,9 +12907,11 @@ export class SystemClient extends AIForgedBase {
     }
 }
 export class UserGroupClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -13113,9 +13153,11 @@ export class UserGroupClient extends AIForgedBase {
     }
 }
 export class UserPreferencesClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -13215,9 +13257,11 @@ export class UserPreferencesClient extends AIForgedBase {
     }
 }
 export class UserSettingsClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -13562,9 +13606,11 @@ export class UserSettingsClient extends AIForgedBase {
     }
 }
 export class VerificationClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -14200,9 +14246,11 @@ export class VerificationClient extends AIForgedBase {
     }
 }
 export class WizardClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -14489,9 +14537,11 @@ export class WizardClient extends AIForgedBase {
     }
 }
 export class WorkItemClient extends AIForgedBase {
+    http;
+    baseUrl;
+    jsonParseReviver = undefined;
     constructor(configuration, baseUrl, http) {
         super(configuration);
-        this.jsonParseReviver = undefined;
         this.http = http ? http : window;
         this.baseUrl = this.getBaseUrl("https://portal.aiforged.com", baseUrl);
     }
@@ -15593,6 +15643,21 @@ export class WorkItemClient extends AIForgedBase {
 }
 /** User information */
 export class UserViewModel {
+    id;
+    userName;
+    fullName;
+    email;
+    jobTitle;
+    phoneNumber;
+    configuration;
+    isEnabled;
+    isLockedOut;
+    friendlyName;
+    createdBy;
+    updatedBy;
+    createdDate;
+    updatedDate;
+    roles;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -15656,6 +15721,10 @@ export class UserViewModel {
 }
 /** User information */
 export class UserEditViewModel extends UserViewModel {
+    currentPassword;
+    newPassword;
+    confirmPassword;
+    captchaToken;
     constructor(data) {
         super(data);
     }
@@ -15685,6 +15754,9 @@ export class UserEditViewModel extends UserViewModel {
     }
 }
 export class OperationBase {
+    path;
+    op;
+    from;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -15715,6 +15787,7 @@ export class OperationBase {
     }
 }
 export class Operation extends OperationBase {
+    value;
     constructor(data) {
         super(data);
     }
@@ -15738,6 +15811,8 @@ export class Operation extends OperationBase {
     }
 }
 export class UserActivateViewModel {
+    userName;
+    token;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -15766,6 +15841,10 @@ export class UserActivateViewModel {
     }
 }
 export class UserPasswordResetViewModel {
+    userName;
+    token;
+    password;
+    confirmPassword;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -15798,6 +15877,9 @@ export class UserPasswordResetViewModel {
     }
 }
 export class UserLoginInfo {
+    loginProvider;
+    providerKey;
+    providerDisplayName;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -15828,6 +15910,35 @@ export class UserLoginInfo {
     }
 }
 export class AuditViewModel {
+    id;
+    userId;
+    entity;
+    access;
+    keyId;
+    keyValue;
+    dt;
+    field;
+    value;
+    data;
+    comment;
+    /** Projects is a container for billing and services */
+    project;
+    /** Service, settings abd rules definitions */
+    service;
+    /** Document metadata info */
+    document;
+    /** Service, settings abd rules definitions */
+    def;
+    /** Fields values linked ot extracted from documents */
+    parameter;
+    /** System and user verification info for fields on documents */
+    verification;
+    /** Worflow record to manage assignments of verification tasks */
+    workItem;
+    transaction;
+    event;
+    userName;
+    userFullName;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -15930,6 +16041,18 @@ export var AuditAccessType;
 })(AuditAccessType || (AuditAccessType = {}));
 /** Projects is a container for billing and services */
 export class ProjectViewModel {
+    id;
+    userId;
+    status;
+    name;
+    description;
+    comment;
+    dtc;
+    dtm;
+    /** Accounting info for projects and services */
+    balance;
+    totalDocsCount;
+    services;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -15996,6 +16119,26 @@ export var ProjectStatus;
 })(ProjectStatus || (ProjectStatus = {}));
 /** Accounting info for projects and services */
 export class AccountBalanceItem {
+    id;
+    serviceId;
+    serviceTypeId;
+    projectId;
+    groupId;
+    bundleId;
+    userId;
+    drCount;
+    crCount;
+    drQty;
+    crQry;
+    dr;
+    cr;
+    balance;
+    project;
+    service;
+    serviceType;
+    bundle;
+    name;
+    userName;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16061,6 +16204,37 @@ export class AccountBalanceItem {
 }
 /** Service, settings abd rules definitions */
 export class ParameterDefViewModel {
+    id;
+    projectId;
+    serviceTypeId;
+    serviceId;
+    classId;
+    parentId;
+    name;
+    label;
+    tags;
+    description;
+    dtc;
+    dtm;
+    status;
+    category;
+    grouping;
+    valueType;
+    valueTypeName;
+    defaultValue;
+    required;
+    index;
+    info;
+    reference;
+    rating;
+    availability;
+    children;
+    settings;
+    totalCharge;
+    userCount;
+    parameterCount;
+    documentCount;
+    validation;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16254,6 +16428,40 @@ export var Availability;
 })(Availability || (Availability = {}));
 /** Detailed settings for rules and settings */
 export class ParameterDefSettingViewModel {
+    id;
+    parameterDefId;
+    type;
+    status;
+    dtc;
+    dtm;
+    comment;
+    info;
+    data;
+    minValue;
+    maxValue;
+    confidence;
+    minConfidence;
+    maxConfidence;
+    isCaseSensative;
+    invert;
+    oneLine;
+    oneWord;
+    isHandwriting;
+    orientation;
+    marking;
+    cells;
+    clearBefore;
+    clearAfter;
+    cleanupValuesBefore;
+    cleanupValuesAfter;
+    validateValuesBefore;
+    validateValuesAfter;
+    abortOnValidationError;
+    isReplacementCaseSensative;
+    compileResults;
+    maxRetry;
+    timeout;
+    userId;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16395,6 +16603,38 @@ export var OptionStatusFlags;
 })(OptionStatusFlags || (OptionStatusFlags = {}));
 /** Document metadata info */
 export class DocumentViewModel {
+    id;
+    userId;
+    projectId;
+    serviceId;
+    status;
+    usage;
+    classId;
+    contentType;
+    filename;
+    fileType;
+    dtc;
+    dtm;
+    documentId;
+    externalId;
+    masterId;
+    result;
+    resultId;
+    resultIndex;
+    comment;
+    availability;
+    resultParameters;
+    data;
+    documents;
+    info;
+    originId;
+    canVerify;
+    canClassify;
+    canTrain;
+    trained;
+    linkedDocsCount;
+    trainingFieldCount;
+    trainedParametersCount;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16549,6 +16789,23 @@ export var UsageType;
 })(UsageType || (UsageType = {}));
 /** Fields values linked ot extracted from documents */
 export class DocumentParameterViewModel {
+    id;
+    documentId;
+    paramDefId;
+    parentId;
+    sourceId;
+    value;
+    data;
+    index;
+    colIndex;
+    colSpan;
+    rowIndex;
+    rowSpan;
+    availability;
+    /** Service, settings abd rules definitions */
+    paramDef;
+    children;
+    verifications;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16622,6 +16879,27 @@ export class DocumentParameterViewModel {
 }
 /** System and user verification info for fields on documents */
 export class VerificationViewModel {
+    id;
+    parameterId;
+    userId;
+    value;
+    dt;
+    confidence;
+    symbolsConfidence;
+    type;
+    status;
+    result;
+    box;
+    info;
+    data;
+    userName;
+    serviceId;
+    serviceDocId;
+    provider;
+    settingId;
+    workItem;
+    transactionId;
+    charge;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16719,6 +16997,21 @@ export var VerificationStatus;
 })(VerificationStatus || (VerificationStatus = {}));
 /** Document blob data */
 export class DocumentDataViewModel {
+    id;
+    documentId;
+    blobId;
+    type;
+    data;
+    preview;
+    text;
+    info;
+    contentType;
+    resultId;
+    index;
+    width;
+    height;
+    resolution;
+    availability;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16782,6 +17075,46 @@ export var DocumentDataType;
 })(DocumentDataType || (DocumentDataType = {}));
 /** Worflow record to manage assignments of verification tasks */
 export class WorkItemViewModel {
+    id;
+    puId;
+    serviceId;
+    documentId;
+    defId;
+    shredId;
+    verificationId;
+    transactionId;
+    workItemId;
+    type;
+    action;
+    status;
+    method;
+    info;
+    comment;
+    dtc;
+    dtm;
+    dueDate;
+    open;
+    closed;
+    duration;
+    /** Relationship between users, projects, services and groups */
+    pu;
+    /** Service, settings abd rules definitions */
+    service;
+    /** Document metadata info */
+    document;
+    /** Fields values linked ot extracted from documents */
+    shred;
+    /** Service, settings abd rules definitions */
+    def;
+    /** System and user verification info for fields on documents */
+    verification;
+    /** Worflow record to manage assignments of verification tasks */
+    parent;
+    /** Projects is a container for billing and services */
+    project;
+    /** User information */
+    user;
+    docCategory;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -16912,6 +17245,30 @@ export var WorkItemMethod;
 })(WorkItemMethod || (WorkItemMethod = {}));
 /** Relationship between users, projects, services and groups */
 export class ProjectUserViewModel {
+    id;
+    userId;
+    userName;
+    userFullName;
+    projectId;
+    serviceId;
+    groupId;
+    role;
+    permission;
+    type;
+    status;
+    dtc;
+    dtm;
+    /** User information */
+    user;
+    /** Projects is a container for billing and services */
+    project;
+    /** Service, settings abd rules definitions */
+    service;
+    /** User groups for sharing services and billing */
+    group;
+    balances;
+    related;
+    constraints;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17018,6 +17375,13 @@ export var ProjectUserStatus;
 })(ProjectUserStatus || (ProjectUserStatus = {}));
 /** User groups for sharing services and billing */
 export class UserGroupViewModel {
+    id;
+    type;
+    status;
+    userId;
+    name;
+    dtc;
+    dtm;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17070,6 +17434,18 @@ export var UserGroupStatus;
     UserGroupStatus[UserGroupStatus["Deleted"] = 99] = "Deleted";
 })(UserGroupStatus || (UserGroupStatus = {}));
 export class ProjectUserConstraintViewModel {
+    id;
+    projectUserId;
+    type;
+    status;
+    intervalType;
+    interval;
+    fromDate;
+    toDate;
+    key;
+    value;
+    comment;
+    userId;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17137,6 +17513,21 @@ export var ConstraintIntervalType;
     ConstraintIntervalType[ConstraintIntervalType["Timespan"] = 5] = "Timespan";
 })(ConstraintIntervalType || (ConstraintIntervalType = {}));
 export class TransactionsAuditViewModel {
+    id;
+    serviceId;
+    projectId;
+    bundleId;
+    paymentId;
+    chargeId;
+    relatedTxnId;
+    userId;
+    runId;
+    dtc;
+    dtm;
+    qty;
+    price;
+    cost;
+    isCredit;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17191,6 +17582,28 @@ export class TransactionsAuditViewModel {
     }
 }
 export class ServiceEventViewModel {
+    id;
+    userId;
+    projectId;
+    serviceId;
+    eventType;
+    status;
+    description;
+    dtc;
+    dtm;
+    start;
+    end;
+    sourceType;
+    sourceId;
+    resultType;
+    resultId;
+    resultBody;
+    resultCount;
+    resultStatusId;
+    resultClassId;
+    masterId;
+    master;
+    related;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17300,6 +17713,18 @@ export var ReferenceType;
 })(ReferenceType || (ReferenceType = {}));
 /** A bundle for payments and credits */
 export class BundlesViewModel {
+    id;
+    type;
+    name;
+    description;
+    count;
+    price;
+    discount;
+    dtc;
+    dtm;
+    isActive;
+    expiryDate;
+    productCode;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17357,6 +17782,18 @@ export var BundleType;
 })(BundleType || (BundleType = {}));
 /** Categories/Classes for training and classification */
 export class ClassesViewModel {
+    id;
+    userId;
+    projectId;
+    name;
+    description;
+    comment;
+    dtc;
+    dtm;
+    type;
+    status;
+    related;
+    reference;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17425,6 +17862,15 @@ export var DictionaryLookupMethod;
     DictionaryLookupMethod[DictionaryLookupMethod["None"] = 4] = "None";
 })(DictionaryLookupMethod || (DictionaryLookupMethod = {}));
 export class ContactViewModel {
+    id;
+    userId;
+    status;
+    type;
+    address;
+    name;
+    comment;
+    dtc;
+    dtm;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17483,6 +17929,26 @@ export var NotificationType;
     NotificationType[NotificationType["Application"] = 5] = "Application";
 })(NotificationType || (NotificationType = {}));
 export class CustomDataSet {
+    projectId;
+    stpdId;
+    docId;
+    keyDefId;
+    /** Service, settings abd rules definitions */
+    keyDef;
+    /** Document metadata info */
+    document;
+    definitions;
+    data;
+    status;
+    info;
+    includeData;
+    pageNo;
+    pageSize;
+    sortFieldDefId;
+    sortDirection;
+    includeVerifications;
+    searchField;
+    searchValue;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17559,6 +18025,11 @@ export class CustomDataSet {
     }
 }
 export class CustomDataSetRecord {
+    keyId;
+    keyDefId;
+    keyValue;
+    availability;
+    values;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17601,6 +18072,20 @@ export class CustomDataSetRecord {
     }
 }
 export class CustomDataSetValue {
+    defId;
+    id;
+    parentId;
+    index;
+    value;
+    availability;
+    verificationId;
+    verValue;
+    dt;
+    confidence;
+    type;
+    status;
+    provider;
+    result;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17667,6 +18152,19 @@ export var SortField;
     SortField[SortField["Category"] = 5] = "Category";
 })(SortField || (SortField = {}));
 export class DocumentsSummary {
+    projectId;
+    serviceType;
+    serviceId;
+    usage;
+    status;
+    name;
+    classId;
+    className;
+    serviceName;
+    fileType;
+    dt;
+    count;
+    labelledCount;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17723,6 +18221,39 @@ export var OperationOption;
     OperationOption[OperationOption["Latest"] = 2] = "Latest";
 })(OperationOption || (OperationOption = {}));
 export class LogViewModel {
+    id;
+    type;
+    projectId;
+    serviceId;
+    documentId;
+    defId;
+    parameterId;
+    verificationId;
+    workItemId;
+    transactionId;
+    eventId;
+    userId;
+    dtc;
+    comment;
+    stackTrace;
+    errorMessage;
+    page;
+    /** Projects is a container for billing and services */
+    project;
+    /** Service, settings abd rules definitions */
+    service;
+    /** Document metadata info */
+    document;
+    /** Service, settings abd rules definitions */
+    def;
+    /** Fields values linked ot extracted from documents */
+    parameter;
+    /** System and user verification info for fields on documents */
+    verification;
+    /** Worflow record to manage assignments of verification tasks */
+    workItem;
+    transaction;
+    event;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17808,6 +18339,17 @@ export var LogType;
     LogType[LogType["Critical"] = 5] = "Critical";
 })(LogType || (LogType = {}));
 export class RatingViewModel {
+    id;
+    paramDefId;
+    parameterId;
+    verificationId;
+    type;
+    status;
+    userId;
+    dt;
+    value;
+    comment;
+    userName;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17866,6 +18408,10 @@ export var RatingStatus;
     RatingStatus[RatingStatus["Deleted"] = 99] = "Deleted";
 })(RatingStatus || (RatingStatus = {}));
 export class UserInviteViewModel {
+    email;
+    projectId;
+    serviceId;
+    message;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17898,6 +18444,8 @@ export class UserInviteViewModel {
     }
 }
 export class NotificationPreferences {
+    preferences;
+    map;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -17965,6 +18513,8 @@ export var NotificationArea;
     NotificationArea[NotificationArea["WorkItem"] = 11] = "WorkItem";
 })(NotificationArea || (NotificationArea = {}));
 export class NotificationOption {
+    name;
+    settings;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18001,6 +18551,12 @@ export class NotificationOption {
     }
 }
 export class NotificationSetting {
+    name;
+    event;
+    type;
+    enabled;
+    contacts;
+    contactIds;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18096,6 +18652,34 @@ export var NotificationStatus;
 })(NotificationStatus || (NotificationStatus = {}));
 /** System Notifications */
 export class NotificationViewModel {
+    id;
+    userId;
+    projectId;
+    classId;
+    serviceId;
+    documentId;
+    workItemId;
+    shredId;
+    verificationId;
+    contactId;
+    type;
+    status;
+    area;
+    event;
+    level;
+    to;
+    address;
+    subject;
+    contentType;
+    body;
+    error;
+    dtc;
+    dtm;
+    sent;
+    delivered;
+    readDate;
+    contact;
+    attachments;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18194,6 +18778,11 @@ export var NotificationLevel;
 })(NotificationLevel || (NotificationLevel = {}));
 /** Attachment to system notifications */
 export class NotificationAttachmentViewModel {
+    id;
+    notificationId;
+    contentType;
+    contentId;
+    data;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18228,6 +18817,26 @@ export class NotificationAttachmentViewModel {
     }
 }
 export class DocParamSummary {
+    projectId;
+    serviceType;
+    serviceId;
+    usage;
+    status;
+    name;
+    classId;
+    className;
+    serviceName;
+    fileType;
+    dt;
+    count;
+    labelledCount;
+    pdId;
+    paramDefName;
+    category;
+    grouping;
+    valueType;
+    value;
+    index;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18292,6 +18901,29 @@ export class DocParamSummary {
     }
 }
 export class DocumentExtraction {
+    id;
+    parentId;
+    name;
+    label;
+    category;
+    grouping;
+    valueType;
+    index;
+    paramId;
+    parentParamId;
+    paramIndex;
+    paramValue;
+    verificationId;
+    userId;
+    userName;
+    value;
+    dt;
+    confidence;
+    type;
+    status;
+    charge;
+    provider;
+    result;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18363,6 +18995,8 @@ export class DocumentExtraction {
 }
 /** Credit card transaction order information */
 export class OrderViewModel {
+    orderId;
+    authorizationId;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18391,6 +19025,25 @@ export class OrderViewModel {
     }
 }
 export class PaymentViewModel {
+    id;
+    userId;
+    projectId;
+    bundleId;
+    amount;
+    status;
+    reference;
+    resultCode;
+    result;
+    reason;
+    description;
+    error;
+    data;
+    dtc;
+    dtm;
+    /** Projects is a container for billing and services */
+    project;
+    /** A bundle for payments and credits */
+    bundle;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18463,6 +19116,12 @@ export var PaymentStatus;
     PaymentStatus[PaymentStatus["Unknown"] = 99] = "Unknown";
 })(PaymentStatus || (PaymentStatus = {}));
 export class Group {
+    id;
+    name;
+    isReadOnly;
+    isOnDedicatedCapacity;
+    capacityId;
+    dataflowStorageId;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18499,6 +19158,12 @@ export class Group {
     }
 }
 export class User {
+    emailAddress;
+    displayName;
+    identifier;
+    graphId;
+    principalType;
+    profile;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18535,6 +19200,7 @@ export class User {
     }
 }
 export class GroupUser extends User {
+    groupUserAccessRight;
     constructor(data) {
         super(data);
     }
@@ -18602,6 +19268,8 @@ export class PrincipalType {
     }
 }
 export class ServicePrincipalProfile {
+    id;
+    displayName;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18630,6 +19298,16 @@ export class ServicePrincipalProfile {
     }
 }
 export class Report {
+    id;
+    name;
+    datasetId;
+    appId;
+    description;
+    reportType;
+    webUrl;
+    embedUrl;
+    users;
+    subscriptions;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18690,6 +19368,7 @@ export class Report {
     }
 }
 export class ReportUser extends User {
+    reportUserAccessRight;
     constructor(data) {
         super(data);
     }
@@ -18735,6 +19414,20 @@ export class ReportUserAccessRight {
     }
 }
 export class Subscription {
+    id;
+    title;
+    artifactId;
+    artifactDisplayName;
+    subArtifactDisplayName;
+    artifactType;
+    isEnabled;
+    frequency;
+    startDate;
+    endDate;
+    linkToContent;
+    previewImage;
+    attachmentFormat;
+    users;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18814,6 +19507,9 @@ export class SubscriptionUser extends User {
     }
 }
 export class Page {
+    name;
+    displayName;
+    order;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18844,6 +19540,11 @@ export class Page {
     }
 }
 export class RoleViewModel {
+    id;
+    name;
+    description;
+    usersCount;
+    permissions;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18886,6 +19587,10 @@ export class RoleViewModel {
     }
 }
 export class PermissionViewModel {
+    name;
+    value;
+    groupName;
+    description;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18918,6 +19623,17 @@ export class PermissionViewModel {
     }
 }
 export class ServiceChargeViewModel {
+    id;
+    serviceId;
+    status;
+    dtc;
+    dtm;
+    fromDate;
+    toDate;
+    cost;
+    charge;
+    comment;
+    userId;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -18970,6 +19686,23 @@ export var ChargeStatus;
 })(ChargeStatus || (ChargeStatus = {}));
 /** Service type information */
 export class ServiceTypeViewModel {
+    id;
+    name;
+    description;
+    group;
+    dtc;
+    dtm;
+    status;
+    options;
+    availability;
+    logo;
+    icon;
+    info;
+    engine;
+    cost;
+    charge;
+    valueType;
+    charges;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19066,6 +19799,17 @@ export var ServiceOptions;
     ServiceOptions[ServiceOptions["GLCodes"] = 4194304] = "GLCodes";
 })(ServiceOptions || (ServiceOptions = {}));
 export class ServiceTypeChargeViewModel {
+    id;
+    serviceTypeId;
+    status;
+    fromDate;
+    toDate;
+    cost;
+    charge;
+    comment;
+    userId;
+    /** Service type information */
+    serviceType;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19111,6 +19855,13 @@ export class ServiceTypeChargeViewModel {
 }
 /** Data types used for rules and internal processing */
 export class DataTypeViewModel {
+    id;
+    name;
+    description;
+    category;
+    valueTypeName;
+    defaultValue;
+    data;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19163,6 +19914,15 @@ export var DataTypeCategory;
 })(DataTypeCategory || (DataTypeCategory = {}));
 /** List of system Enums and basic UI info */
 export class EnumDataViewModel {
+    id;
+    type;
+    typeName;
+    name;
+    value;
+    description;
+    info;
+    icon;
+    color;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19259,6 +20019,15 @@ export var EnumType;
     EnumType[EnumType["SortDirection"] = 2001] = "SortDirection";
 })(EnumType || (EnumType = {}));
 export class BackgoundWorkItem {
+    connId;
+    userId;
+    id;
+    info;
+    exception;
+    progress;
+    start;
+    end;
+    lastMsgDT;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19301,6 +20070,11 @@ export class BackgoundWorkItem {
     }
 }
 export class LogEvent {
+    timestamp;
+    level;
+    message;
+    exception;
+    context;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19335,6 +20109,15 @@ export class LogEvent {
     }
 }
 export class SettingViewModel {
+    id;
+    userId;
+    name;
+    key;
+    description;
+    value;
+    status;
+    dtc;
+    dtm;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19378,6 +20161,46 @@ export class SettingViewModel {
 }
 /** System and user verification info for fields on documents */
 export class VerificationSummary {
+    id;
+    parameterId;
+    userId;
+    value;
+    dt;
+    confidence;
+    symbolsConfidence;
+    type;
+    status;
+    result;
+    box;
+    info;
+    data;
+    userName;
+    serviceId;
+    serviceDocId;
+    provider;
+    settingId;
+    workItem;
+    transactionId;
+    charge;
+    paramDefId;
+    paramDefName;
+    projectId;
+    projectName;
+    docId;
+    docFileName;
+    docContentType;
+    docUsage;
+    docStatus;
+    classId;
+    className;
+    year;
+    month;
+    day;
+    dayOfWeek;
+    count;
+    average;
+    min;
+    max;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19492,6 +20315,23 @@ export var DayOfWeek;
     DayOfWeek[DayOfWeek["Saturday"] = 6] = "Saturday";
 })(DayOfWeek || (DayOfWeek = {}));
 export class Wizard {
+    index;
+    name;
+    description;
+    type;
+    state;
+    info;
+    error;
+    warning;
+    information;
+    /** Service, settings abd rules definitions */
+    stpd;
+    /** Service, settings abd rules definitions */
+    dependencyPD;
+    /** Service, settings abd rules definitions */
+    pd;
+    removePDId;
+    docsCount;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19577,6 +20417,25 @@ export var WizardValidation;
     WizardValidation[WizardValidation["AfterSave"] = 4] = "AfterSave";
 })(WizardValidation || (WizardValidation = {}));
 export class WorkFlowSummary {
+    projectId;
+    userId;
+    userName;
+    serviceId;
+    defId;
+    docId;
+    filename;
+    docStatus;
+    docUsage;
+    docClassId;
+    docClassName;
+    action;
+    type;
+    status;
+    method;
+    dt;
+    duration;
+    activeDuration;
+    count;
     constructor(data) {
         if (data) {
             for (var property in data) {
@@ -19639,15 +20498,20 @@ export class WorkFlowSummary {
     }
 }
 export class ApiException extends Error {
+    message;
+    status;
+    response;
+    headers;
+    result;
     constructor(message, status, response, headers, result) {
         super();
-        this.isApiException = true;
         this.message = message;
         this.status = status;
         this.response = response;
         this.headers = headers;
         this.result = result;
     }
+    isApiException = true;
     static isApiException(obj) {
         return obj.isApiException === true;
     }

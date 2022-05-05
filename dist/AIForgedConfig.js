@@ -1,5 +1,8 @@
-import * as xxx from 'node-fetch';
+const importDynamic = new Function('modulePath', 'return import(modulePath)');
+const module = await importDynamic('node-fetch');
 export class AIForgedConfig {
+    Url;
+    _authToken;
     constructor(url) {
         this.Url = url;
     }
@@ -13,8 +16,8 @@ export class AIForgedConfig {
     ;
 }
 export class AIForgedHttp {
-    fetch(url, init) {
-        return xxx.default(url, init);
-    }
+    fetch = async (...args) => {
+        return module.default(...args);
+    };
 }
 //# sourceMappingURL=AIForgedConfig.js.map

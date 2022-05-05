@@ -1,5 +1,8 @@
 
-import * as xxx from 'node-fetch';
+import fetch, { RequestInfo, RequestInit, Response } from 'node-fetch';
+
+const importDynamic = new Function('modulePath', 'return import(modulePath)');
+const module = await importDynamic('node-fetch');
 
 export interface IAIForgedConfig {
     Url : string;
@@ -26,9 +29,8 @@ export class AIForgedConfig implements IAIForgedConfig {
 }
 
 export class AIForgedHttp
-{
-    fetch(url: RequestInfo, init?: RequestInit): Promise<Response> {
-        return xxx.default(<xxx.RequestInfo>url, <xxx.RequestInit>init);
-    }
-    
+{    
+    fetch = async (...args:any[]) => {        
+        return module.default(...args);
+    };
 }

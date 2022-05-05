@@ -1,5 +1,6 @@
 //https://github.com/RicoSuter/NSwag/issues/3383
 export class AIForgedBase {
+    _configuration;
     constructor(configuration) {
         this._configuration = configuration;
     }
