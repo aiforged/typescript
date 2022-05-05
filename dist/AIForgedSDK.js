@@ -17935,7 +17935,7 @@ export class NotificationPreferences {
         if (this.preferences) {
             data["preferences"] = {};
             for (let key in this.preferences) {
-                if (this.preferences?.hasOwnProperty(key))
+                if (this.preferences.hasOwnProperty(key))
                     data["preferences"][key] = this.preferences[key] ? this.preferences[key]?.toJSON() : undefined;
             }
         }

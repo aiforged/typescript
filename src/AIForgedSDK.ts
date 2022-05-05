@@ -18153,7 +18153,7 @@ export class UserEditViewModel extends UserViewModel implements IUserEditViewMod
         super(data);
     }
 
-    init(_data?: any) {
+    override init(_data?: any) {
         super.init(_data);
         if (_data) {
             this.currentPassword = _data["currentPassword"];
@@ -18163,14 +18163,14 @@ export class UserEditViewModel extends UserViewModel implements IUserEditViewMod
         }
     }
 
-    static fromJS(data: any): UserEditViewModel {
+    static override fromJS(data: any): UserEditViewModel {
         data = typeof data === 'object' ? data : {};
         let result = new UserEditViewModel();
         result.init(data);
         return result;
     }
 
-    toJSON(data?: any) {
+    override toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["currentPassword"] = this.currentPassword;
         data["newPassword"] = this.newPassword;
@@ -18240,21 +18240,21 @@ export class Operation extends OperationBase implements IOperation {
         super(data);
     }
 
-    init(_data?: any) {
+    override init(_data?: any) {
         super.init(_data);
         if (_data) {
             this.value = _data["value"];
         }
     }
 
-    static fromJS(data: any): Operation {
+    static override fromJS(data: any): Operation {
         data = typeof data === 'object' ? data : {};
         let result = new Operation();
         result.init(data);
         return result;
     }
 
-    toJSON(data?: any) {
+    override toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["value"] = this.value;
         super.toJSON(data);
@@ -21653,7 +21653,7 @@ export class NotificationPreferences implements INotificationPreferences {
         if (this.preferences) {
             data["preferences"] = {};
             for (let key in this.preferences) {
-                if (this.preferences?.hasOwnProperty(key))
+                if (this.preferences.hasOwnProperty(key))
                     (<any>data["preferences"])[key] = this.preferences[key] ? this.preferences[key]?.toJSON() : <any>undefined;
             }
         }
@@ -22582,21 +22582,21 @@ export class GroupUser extends User implements IGroupUser {
         super(data);
     }
 
-    init(_data?: any) {
+    override init(_data?: any) {
         super.init(_data);
         if (_data) {
             this.groupUserAccessRight = _data["groupUserAccessRight"] ? GroupUserAccessRight.fromJS(_data["groupUserAccessRight"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any): GroupUser {
+    static override fromJS(data: any): GroupUser {
         data = typeof data === 'object' ? data : {};
         let result = new GroupUser();
         result.init(data);
         return result;
     }
 
-    toJSON(data?: any) {
+    override toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["groupUserAccessRight"] = this.groupUserAccessRight ? this.groupUserAccessRight.toJSON() : <any>undefined;
         super.toJSON(data);
@@ -22803,21 +22803,21 @@ export class ReportUser extends User implements IReportUser {
         super(data);
     }
 
-    init(_data?: any) {
+    override init(_data?: any) {
         super.init(_data);
         if (_data) {
             this.reportUserAccessRight = _data["reportUserAccessRight"] ? ReportUserAccessRight.fromJS(_data["reportUserAccessRight"]) : <any>undefined;
         }
     }
 
-    static fromJS(data: any): ReportUser {
+    static override fromJS(data: any): ReportUser {
         data = typeof data === 'object' ? data : {};
         let result = new ReportUser();
         result.init(data);
         return result;
     }
 
-    toJSON(data?: any) {
+    override toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         data["reportUserAccessRight"] = this.reportUserAccessRight ? this.reportUserAccessRight.toJSON() : <any>undefined;
         super.toJSON(data);
@@ -22961,18 +22961,18 @@ export class SubscriptionUser extends User implements ISubscriptionUser {
         super(data);
     }
 
-    init(_data?: any) {
+    override init(_data?: any) {
         super.init(_data);
     }
 
-    static fromJS(data: any): SubscriptionUser {
+    static override fromJS(data: any): SubscriptionUser {
         data = typeof data === 'object' ? data : {};
         let result = new SubscriptionUser();
         result.init(data);
         return result;
     }
 
-    toJSON(data?: any) {
+    override toJSON(data?: any) {
         data = typeof data === 'object' ? data : {};
         super.toJSON(data);
         return data;
@@ -24268,7 +24268,7 @@ export interface FileResponse {
 }
 
 export class ApiException extends Error {
-    message: string;
+    override message: string;
     status: number;
     response: string;
     headers: { [key: string]: any; };

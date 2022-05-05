@@ -1,21 +1,19 @@
-﻿//run with
-//cd nswag
-//nswag run Portal2TS.nswag
 {
   "runtime": "Net60",
   "defaultVariables": null,
   "documentGenerator": {
-
     "fromDocument": {
-      "url": "https://portal.aiforged.com/openapi/v2.0/openapi.json"
-    },
+      "url": "https://portal.aiforged.com/openapi/v2.0/openapi.json",
+      "output": null,
+      "newLineBehavior": "Auto"
+    }
   },
-  "codeGenerators": {    
+  "codeGenerators": {
     "openApiToTypeScriptClient": {
       "className": "{controller}Client",
       "moduleName": "",
       "namespace": "",
-      "typeScriptVersion": 2.7,
+      "typeScriptVersion": 4.3,
       "template": "Fetch",
       "promiseType": "Promise",
       "httpClass": "HttpClient",
@@ -63,11 +61,11 @@
       "useAbortSignal": false,
       "inlineNamedDictionaries": false,
       "inlineNamedAny": false,
+      "includeHttpContext": false,
       "templateDirectory": null,
       "typeNameGeneratorType": null,
       "propertyNameGeneratorType": null,
       "enumNameGeneratorType": null,
-      "checksumCacheEnabled": false,
       "serviceHost": null,
       "serviceSchemes": null,
       "output": "../src/AIForgedSDK.ts",
