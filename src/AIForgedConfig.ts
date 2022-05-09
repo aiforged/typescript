@@ -1,5 +1,5 @@
 
-import fetch, { RequestInfo, RequestInit, Response } from 'node-fetch';
+import fetch, { RequestInfo, RequestInit, Response, File } from 'node-fetch';
 
 const importDynamic = new Function('modulePath', 'return import(modulePath)');
 const module = await importDynamic('node-fetch');

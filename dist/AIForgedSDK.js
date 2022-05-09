@@ -6,6 +6,7 @@
 /* tslint:disable */
 /* eslint-disable */
 // ReSharper disable InconsistentNaming
+import { FormData } from 'node-fetch';
 import { AIForgedBase } from "./AIForgedBase";
 export class AccountClient extends AIForgedBase {
     http;
@@ -5353,9 +5354,11 @@ export class DocumentClient extends AIForgedBase {
         else if (guid !== undefined)
             url_ += "guid=" + encodeURIComponent("" + guid) + "&";
         url_ = url_.replace(/[?&]$/, "");
+        //let boundary_: string = `"----------${uuid()}`;
+        //"Content-Type": `multipart/form-data; boundary=${boundary_}`
         const content_ = new FormData();
         if (data !== null && data !== undefined)
-            data.forEach(item_ => content_.append("data", item_.toString()));
+            data.forEach(item_ => content_.append("data", item_));
         let options_ = {
             body: content_,
             method: "POST",

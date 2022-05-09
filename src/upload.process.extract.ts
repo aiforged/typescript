@@ -2,6 +2,7 @@
 import {AIForgedConfig, AIForgedHttp} from "./AIForgedConfig";
 import {SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, SortField, SortDirection, DocumentStatus} from "./AIForgedSDK";
 import Enumerable from 'linq'
+import { File } from "node-fetch";
 
 console.log("Start")
 
@@ -20,8 +21,8 @@ var svcclnt: ServicesClient = new ServicesClient(config, undefined, http);
 var parclnt: ParametersClient = new ParametersClient(config, undefined, http);
 var docclnt: DocumentClient = new DocumentClient(config, undefined, http);
 
-var projectId:number = 80;
-var serviceId:number = 42784;
+var projectId:number = 192;
+var serviceId:number = 48072;
 
 var user = await accclnt.getCurrentUser(null);
 
@@ -45,9 +46,10 @@ var service = Enumerable
     .from(services)
     .first(s => s.id == serviceId);
 
-var filedata: any[] = [ 
-    {"filename1": "data" },
-    {"filename2": "data" },
+const mimetype = 'text/plain'
+var files: File[] = [ 
+    new File([new Uint8Array([ 97, 98, 99 ])], "text1.txt", { type: mimetype }),
+    new File([new Uint8Array([ 97, 98, 99 ])], "text1.txt", { type: mimetype }),    
 ];
 
 var uploadeddocs = await docclnt.upload(service.id,
@@ -64,7 +66,7 @@ var uploadeddocs = await docclnt.upload(service.id,
     null,
     undefined,
     null,
-    filedata);
+    files);
 
 var uploadeddocids:number[] = Enumerable
     .from(uploadeddocs)

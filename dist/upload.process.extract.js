@@ -1,6 +1,7 @@
 import { AIForgedConfig, AIForgedHttp } from "./AIForgedConfig";
 import { SystemClient, AccountClient, ProjectClient, DocumentClient, ServicesClient, ParametersClient, UsageType, DocumentStatus } from "./AIForgedSDK";
 import Enumerable from 'linq';
+import { File } from "node-fetch";
 console.log("Start");
 var serverUrl = "https://portal.aiforged.com";
 //get this API Key from aiforged front end at User Profile \ Sign-in Options \ API Keys
@@ -14,8 +15,8 @@ var prjclnt = new ProjectClient(config, undefined, http);
 var svcclnt = new ServicesClient(config, undefined, http);
 var parclnt = new ParametersClient(config, undefined, http);
 var docclnt = new DocumentClient(config, undefined, http);
-var projectId = 80;
-var serviceId = 42784;
+var projectId = 192;
+var serviceId = 48072;
 var user = await accclnt.getCurrentUser(null);
 console.log(`Hi ${user.fullName}, welcome to AIForged`);
 var projects = await prjclnt.getByUser(user.id, null);
@@ -31,11 +32,12 @@ console.log(`You have ${services.length} services linked to project ${project.na
 var service = Enumerable
     .from(services)
     .first(s => s.id == serviceId);
-var filedata = [
-    { "filename1": "data" },
-    { "filename2": "data" },
+const mimetype = 'text/plain';
+var files = [
+    new File([new Uint8Array([97, 98, 99])], "text1.txt", { type: mimetype }),
+    new File([new Uint8Array([97, 98, 99])], "text1.txt", { type: mimetype }),
 ];
-var uploadeddocs = await docclnt.upload(service.id, user.id, project.id, null, DocumentStatus.Received, UsageType.Inbox, null, null, null, null, null, null, undefined, null, filedata);
+var uploadeddocs = await docclnt.upload(service.id, user.id, project.id, null, DocumentStatus.Received, UsageType.Inbox, null, null, null, null, null, null, undefined, null, files);
 var uploadeddocids = Enumerable
     .from(uploadeddocs)
     .select(d => d.id)

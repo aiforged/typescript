@@ -8,6 +8,7 @@
 /* eslint-disable */
 // ReSharper disable InconsistentNaming
 
+import {FormData, File} from 'node-fetch'
 import {AIForgedBase} from "./AIForgedBase";
 import {AIForgedConfig} from "./AIForgedConfig";
 
@@ -6225,7 +6226,7 @@ export class DocumentClient extends AIForgedBase implements IDocumentClient {
      * @param x_Api_Version (optional) 
      * @param data (optional) 
      */
-    upload(stpdId: number | undefined, userId: string | null | undefined, projectId: number | undefined, classId: number | null | undefined, status: DocumentStatus | undefined, usage: UsageType | undefined, masterid: number | null | undefined, comment: string | null | undefined, externalId: string | null | undefined, result: string | null | undefined, resultId: string | null | undefined, resultIndex: number | null | undefined, guid: string | undefined, x_Api_Version: string | null | undefined, data: any[] | null | undefined): Promise<DocumentViewModel[]> {
+    upload(stpdId: number | undefined, userId: string | null | undefined, projectId: number | undefined, classId: number | null | undefined, status: DocumentStatus | undefined, usage: UsageType | undefined, masterid: number | null | undefined, comment: string | null | undefined, externalId: string | null | undefined, result: string | null | undefined, resultId: string | null | undefined, resultIndex: number | null | undefined, guid: string | undefined, x_Api_Version: string | null | undefined, data: File[] | null | undefined): Promise<DocumentViewModel[]> {
         let url_ = this.baseUrl + "/api/Document/Upload?";
         if (stpdId === null)
             throw new Error("The parameter 'stpdId' cannot be null.");
@@ -6265,9 +6266,11 @@ export class DocumentClient extends AIForgedBase implements IDocumentClient {
             url_ += "guid=" + encodeURIComponent("" + guid) + "&";
         url_ = url_.replace(/[?&]$/, "");
 
-        const content_ = new FormData();
+        //let boundary_: string = `"----------${uuid()}`;
+        //"Content-Type": `multipart/form-data; boundary=${boundary_}`
+        const content_ = new FormData();        
         if (data !== null && data !== undefined)
-            data.forEach(item_ => content_.append("data", item_.toString()));
+            data.forEach(item_ => content_.append("data", item_));
 
         let options_: RequestInit = {
             body: content_,
